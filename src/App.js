@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useContext } from "react";
+import Table from "./components/Table";
+import Insert from "./components/Insert";
+import EditModal from "./components/EditModal";
+import { ListContext } from "./context";
 function App() {
+
+  const {theme} = useContext(ListContext)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`wrapper d-flex align-items-center justify-content-center ${theme}`}>
+      <div
+        className={`container py-4 px-3 border box-shadow ${theme}`}
+      >
+        <EditModal />
+        <div className="row">
+          <div className="col-5">
+            <Insert />
+          </div>
+          <div className="col-7 p-3 border table-wrap">
+            <Table />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

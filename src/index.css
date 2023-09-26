@@ -1,13 +1,89 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+.modal-content.dark{
+  background-color: #313131;
+  color: #fff;
+}
+.modal-content.dark input, 
+.modal-content.dark select,
+.modal-content.dark option {
+  background-color: #131313b9;
+  color: #ffffff93;
+}
+.wrapper.dark{
+  background-color: #313131;
+  color: #fff
+}
+.wrapper.dark input,
+.wrapper.dark select,
+.wrapper.dark option {
+  background-color: #131313b9;
+  color: #ffffff93;
+}
+.table.dark{
+  color: #fff;
+}
+.opc{
+  background-color: rgba(255,255,255,0.13);
+}
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px transparent; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #217346; 
+  border-radius: 10px;
+}
+
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {color: #f1c40f;}
+
+.fa-sun {color: #f39c12;}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+.table-wrap{
+  max-height: 380px;
+  overflow-y: auto;
+  
 }
